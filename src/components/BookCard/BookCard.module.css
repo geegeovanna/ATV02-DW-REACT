@@ -1,0 +1,133 @@
+.containerCard {
+  display: flex;
+  background-color: #fcf9f2;
+  border-bottom: 1px solid #e5dec9; 
+  padding: 3.5rem 0;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.areaLivro {
+  flex-shrink: 0;
+  width: 200px;
+  height: 300px;
+  box-shadow: 0 15px 35px rgba(43, 26, 17, 0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.containerCard:hover .areaLivro {
+  transform: translateY(-6px);
+}
+
+.imagemCapa {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.areaLivroSemCapa {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e25822, #f2994a); 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.autorLivroSemCapa {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+}
+
+.tituloLivroSemCapa {
+  color: #fff;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+}
+
+.anoLivroSemCapa {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+}
+
+.areaExibirLivro {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.infoTopo {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #a38260;
+  margin-bottom: 0.5rem;
+}
+
+.tituloLivro {
+  font-size: 2.4rem;
+  font-weight: normal;
+  color: #2b1a11;
+  margin: 0 0 0.2rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tituloSaga {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #a38260;
+  margin-bottom: 1.5rem;
+}
+
+.descricaoUniverso {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #5c4a3c;
+  max-width: 650px;
+  margin: 0 0 2rem 0;
+}
+
+.linhaRodape {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rotuloEdicoes {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #a38260;
+}
+
+.botaoDetalhes {
+  background: transparent;
+  border: 1px solid #e0d9cb; 
+  padding: 0.6rem 2.2rem;
+  font-family: 'Georgia', serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: #a38260;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botaoDetalhes:hover {
+  background-color: #e67e22; 
+  border-color: #e67e22;     
+  color: #fcf9f2;            
+}

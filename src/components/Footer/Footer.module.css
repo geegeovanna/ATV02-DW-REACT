@@ -1,0 +1,158 @@
+.footer {
+  background-color: #900020;
+  font-family: 'Georgia', serif;
+  padding: 3rem 2rem 1.8rem;
+  color: #e0d9cb;
+}
+
+.containerFooter {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.topoFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.areaLogo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 520px;
+}
+
+.ornamento {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.2rem;
+}
+
+.ornamentoLinha {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(224, 217, 203, 0.4));
+  max-width: 60px;
+}
+
+.logoFooter {
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  color: #fcf9f2;
+  text-transform: uppercase;
+  display: block;
+}
+
+.frase {
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(224, 217, 203, 0.75);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ladoDireito {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.linkLivros {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.acervo {
+  color: #e0d9cb;
+  text-decoration: none;
+  font-size: 0.78rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.acervo:hover {
+  color: #e67e22;
+}
+
+.divisao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 1.6rem;
+}
+
+.linhaDivisoria {
+  flex: 1;
+  height: 1px;
+  background: #e0d9cb4d;
+}
+
+.areaPontos {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ponto {
+  width: 4px;
+  height: 4px;
+  background: #e0d9cb80;
+  border-radius: 50%;
+}
+
+.pontoDourado {
+  width: 4px;
+  height: 4px;
+  background: #e67e22;
+  border-radius: 50%;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: rgba(224, 217, 203, 0.6);
+}
+
+.copyright {
+  margin: 0;
+}
+
+.creditos {
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 600px) {
+  .topoFooter,
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .ladoDireito {
+    align-items: center;
+  }
+
+  .linkLivros {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}

@@ -1,0 +1,17 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif; 
+  background-color: #fcf9f2; 
+  color: #2b1a11; 
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
