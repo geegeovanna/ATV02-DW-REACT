@@ -1,20 +1,45 @@
+import { useState, useEffect } from 'react';
 import styles from './BookModal.module.css';
 
 export default function BookModal({ isOpen, livro, onClose }) {
+  const [detalhes, setDetalhes] = useState(null);
+  const [loadingDetalhes, setLoadingDetalhes] = useState(false);
+
+  useEffect(() => {
+    if (!isOpen || !livro) return;
+
+    setDetalhes(null);
+    setLoadingDetalhes(true);
+
+    fetch(`https://openlibrary.org${livro.key}.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        setDetalhes(data);
+        setLoadingDetalhes(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoadingDetalhes(false);
+      });
+  }, [isOpen, livro]);
+
   if (!isOpen || !livro) return null;
+
   const handleOverlayClick = (e) => {
-    if (e.target === e.currentTarget) {
-      onClose();
-    }
+    if (e.target === e.currentTarget) onClose();
   };
+
+  const sinopse = detalhes?.description
+    ? typeof detalhes.description === 'string'
+      ? detalhes.description
+      : detalhes.description?.value
+    : null;
 
   return (
     <div className={styles.fundoModal} onClick={handleOverlayClick}>
       <div className={styles.containerModal}>
-        
-        <button onClick={onClose} className={styles.botaoFechar}>
-          ✕
-        </button>
+
+        <button onClick={onClose} className={styles.botaoFechar}>✕</button>
 
         <div className={styles.modal}>
           <div className={styles.capaLivro}>
@@ -29,8 +54,15 @@ export default function BookModal({ isOpen, livro, onClose }) {
             <span className={styles.doc}>Documento Oficial</span>
             <h2 className={styles.tituloLivro}>{livro.title}</h2>
             <p className={styles.tituloSaga}>Throne of Glass Series</p>
+
             <p className={styles.descricaoSaga}>
-              "Guardado nas Crônicas de Erilea, este volume <span style={{ color: '#e67e22', fontStyle: 'italic' }}>{livro.title}</span> narra a jornada de Aelin Galathynius em meio a magia, batalhas e reinos em conflito."
+              {loadingDetalhes ? (
+                <em>Consultando os arquivos de Erilea...</em>
+              ) : sinopse ? (
+                `"${sinopse}"`
+              ) : (
+                `"Guardado nas Crônicas de Erilea, este volume ${livro.title} narra a jornada de Aelin Galathynius em meio a magia, batalhas e reinos em conflito."`
+              )}
             </p>
 
             <div className={styles.grid}>
